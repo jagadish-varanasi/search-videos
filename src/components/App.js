@@ -4,11 +4,15 @@ import youtube from '../apis/youtube'
 
 class App extends React.Component{
 //whenever use search for particulr term we nne make use of youtube api
-onTermSubmit=term=>{
+onTermSubmit=async term => {
   console.log(term);
-  youtube.get('/search',{
+  const response= await youtube.get('/search',{
       params:{
-          q:term
+          q:term,
+          part: "snippet",
+          maxResults:5,
+          type:'video',
+          key:KEY
        }
     });
 };

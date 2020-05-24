@@ -6,10 +6,6 @@ const KEY='AIzaSyDoXxm4zYEwjM3OePvOPIPkNJQjI8omIcA';
 
 export default axios.create({
   baseURL:'https://www.googleapis.com/youtube/v3',
-   params:{
-       part:'snippet',
-       maxResults:5,
-       key:KEY
-   }
+  
 });
 //explore this code in youtube list api doc....

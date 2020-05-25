@@ -5,7 +5,7 @@ import VideoItem from './videoItem'
 const videolist=({videos})=>{
     //props.videos is always there here...sent from app component..this has array of videos sent by app component
    const renderList= videos.map((video)=>{
-       return <VideoItem/>;
+       return <VideoItem video={video}/>;
     });//this function will be called one time for every itrm in list videos
     return <div>
      {renderList}

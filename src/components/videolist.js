@@ -7,9 +7,7 @@ const videolist=({videos})=>{
    const renderList= videos.map((video)=>{
        return <VideoItem video={video}/>;
     });//this function will be called one time for every itrm in list videos
-    return <div>
-     {renderList}
-    </div>
+    return <div className="ui relaxed divided list">{renderList}</div>
 }
 
 export default videolist;

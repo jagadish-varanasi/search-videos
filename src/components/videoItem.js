@@ -2,7 +2,7 @@ import React from 'react'
 
 const VideoItem=({video})=>{
     //Now this component has one video object sent by VideoList...it has all details about individual video.....prop is video
-  return( <div>
+  return( <div className="item">
 
     <img src={video.snippet.thumbnails.medium.url}/>  
     {video.snippet.title}

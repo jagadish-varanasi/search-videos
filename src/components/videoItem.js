@@ -1,14 +1,19 @@
-import React from 'react'
+/** @format */
 
-const VideoItem=({video})=>{
-    //Now this component has one video object sent by VideoList...it has all details about individual video.....prop is video
-  return( <div className="item">
+import React from "react"
+import "./videoitem.css"
 
-    <img src={video.snippet.thumbnails.medium.url}/>  
-    {video.snippet.title}
-    {/* //u can obtain this title location in inspect.where u can know how that hirairchy is to reach title */}
-  </div>
+const VideoItem = ({ video }) => {
+  //Now this component has one video object sent by VideoList...it has all details about individual video.....prop is video
+  return (
+    <div className='video-item item'>
+      <img className=' ui image' src={video.snippet.thumbnails.medium.url} />
+      <div className='content'>
+        <div className='header'>{video.snippet.title} </div>
+        {/* //u can obtain this title location in inspect.where u can know how that hirairchy is to reach title */}
+      </div>
+    </div>
   )
 }
 
-export default VideoItem;
+export default VideoItem

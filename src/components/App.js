@@ -2,6 +2,7 @@ import React from "react"
 import SearchBar from "./SearchBar"
 import youtube from "../apis/youtube"
 import VideoList from "./videolist"
+import VideoDetail from "./videodetail"
 const KEY = "AIzaSyDoXxm4zYEwjM3OePvOPIPkNJQjI8omIcA"
 class App extends React.Component {
   state = { videos: [], selectedVideo: null }
@@ -23,14 +24,15 @@ class App extends React.Component {
     //this can ce console logged to now at what herarchy we get list of videos  consol.log(response)
   }
     onVideoselect = (video) => {
-        console.log('Form the App!',video)
+        this.setState({ selectedVideo: video });
     }
 
   render() {
     return (
       <div className='ui container'>
         <SearchBar onFormSubmit={this.onTermSubmit} />
-            <VideoList onVideoselect={this.onVideoselect} videos={this.state.videos}/>
+            <VideoList onVideoselect={this.onVideoselect} videos={this.state.videos} />
+            <VideoDetail video={this.state.selectedVideo}/>
       </div>
     )
   }

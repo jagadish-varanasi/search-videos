@@ -30,9 +30,10 @@ class App extends React.Component {
   render() {
     return (
       <div className='ui container'>
-        <SearchBar onFormSubmit={this.onTermSubmit} />
-            <VideoList onVideoselect={this.onVideoselect} videos={this.state.videos} />
+            <SearchBar onFormSubmit={this.onTermSubmit} />
             <VideoDetail video={this.state.selectedVideo}/>
+            <VideoList onVideoselect={this.onVideoselect} videos={this.state.videos} />
+      
       </div>
     )
   }

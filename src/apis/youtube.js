@@ -1,5 +1,3 @@
-/** @format */
-
 import axios from "axios"
 
 //this api key will be used by our users .....actually this key can be public...

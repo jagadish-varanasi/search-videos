@@ -23,17 +23,27 @@ class App extends React.Component {
     this.setState({ videos: response.data.items })
     //this can ce console logged to now at what herarchy we get list of videos  consol.log(response)
   }
-    onVideoselect = (video) => {
-        this.setState({ selectedVideo: video });
-    }
+  onVideoselect = (video) => {
+    this.setState({ selectedVideo: video })
+  }
 
   render() {
     return (
       <div className='ui container'>
-            <SearchBar onFormSubmit={this.onTermSubmit} />
-            <VideoDetail video={this.state.selectedVideo}/>
-            <VideoList onVideoselect={this.onVideoselect} videos={this.state.videos} />
-      
+        <SearchBar onFormSubmit={this.onTermSubmit} />
+        <div className='ui grid'>
+          <div className='ui row'>
+            <div className='eleven wide column'>
+              <VideoDetail video={this.state.selectedVideo} />
+            </div>
+            <div className='five wide column'>
+              <VideoList
+                onVideoselect={this.onVideoselect}
+                videos={this.state.videos}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

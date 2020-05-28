@@ -20,7 +20,10 @@ class App extends React.Component {
       },
     })
 
-    this.setState({ videos: response.data.items })
+    this.setState({
+      videos: response.data.items,
+      selectedVideo: response.data.items[0],
+    })
     //this can ce console logged to now at what herarchy we get list of videos  consol.log(response)
   }
   onVideoselect = (video) => {

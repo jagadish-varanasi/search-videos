@@ -7,7 +7,11 @@ const KEY = "AIzaSyDoXxm4zYEwjM3OePvOPIPkNJQjI8omIcA"
 class App extends React.Component {
   state = { videos: [], selectedVideo: null }
 
-  //whenever use search for particulr term we nne make use of youtube api
+  //whenever use search for particulr term we nne make use of youtube api''
+  componentDidMount() {
+    this.onTermSubmit("buildings")
+  }
+
   onTermSubmit = async (term) => {
     console.log(term)
     const response = await youtube.get("/search", {
